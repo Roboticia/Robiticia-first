@@ -1,0 +1,217 @@
+<robot
+  name="Roboticia-first">
+  <link
+    name="Base">
+    <inertial>
+      <origin
+        xyz="-0.0027246 0.043545 0.0078373"
+        rpy="0 0 0" />
+      <mass
+        value="0.13942" />
+      <inertia
+        ixx="0.00017976"
+        ixy="-1.193E-05"
+        ixz="-1.66E-06"
+        iyy="0.00014447"
+        iyz="-3.72E-06"
+        izz="0.00030756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Roboticia-first11/meshes/Base_visual.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.10196 0.36863 0.66667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Roboticia-first11/meshes/Base_respondable.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Long_U">
+    <inertial>
+      <origin
+        xyz="-0.0023806 -3.7322E-16 0.01294"
+        rpy="0 0 0" />
+      <mass
+        value="0.0045309" />
+      <inertia
+        ixx="6.2772E-07"
+        ixy="1.1065E-15"
+        ixz="1.193E-07"
+        iyy="1.3496E-06"
+        iyz="1.7226E-20"
+        izz="9.9893E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Roboticia-first11/meshes/Long_U_visual.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.10196 0.36863 0.66667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Roboticia-first11/meshes/Long_U_respondable.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="m1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0336"
+      rpy="0 0 0.0013507" />
+    <parent
+      link="Base" />
+    <child
+      link="Long_U" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-150"
+      upper="150"
+      effort="0.4"
+      velocity="11.9" />
+  </joint>
+  <link
+    name="Arm_1">
+    <inertial>
+      <origin
+        xyz="6.808E-05 0.00077663 0.050624"
+        rpy="0 0 0" />
+      <mass
+        value="0.043632" />
+      <inertia
+        ixx="7.971E-05"
+        ixy="-1E-08"
+        ixz="-3.7E-07"
+        iyy="7.891E-05"
+        iyz="1.13E-06"
+        izz="5.34E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Roboticia-first11/meshes/Arm_1_visual.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.10196 0.36863 0.66667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Roboticia-first11/meshes/Arm_1_respondable.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="m2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.024"
+      rpy="0 0 -0.0013507" />
+    <parent
+      link="Long_U" />
+    <child
+      link="Arm_1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-90"
+      upper="90"
+      effort="0.4"
+      velocity="11.9" />
+  </joint>
+  <link
+    name="Arm_2">
+    <inertial>
+      <origin
+        xyz="8.8916E-05 -0.065828 0.0010474"
+        rpy="0 0 0" />
+      <mass
+        value="0.016096" />
+      <inertia
+        ixx="2.7041E-05"
+        ixy="-2.6769E-08"
+        ixz="-2.2422E-09"
+        iyy="3.8009E-06"
+        iyz="4.1718E-07"
+        izz="2.9749E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Roboticia-first11/meshes/Arm_2_visual.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.10196 0.36863 0.66667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Roboticia-first11/meshes/Arm_2_respondable.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="m3"
+    type="revolute">
+    <origin
+      xyz="0 0.0015338 0.099988"
+      rpy="0 0 0" />
+    <parent
+      link="Arm_1" />
+    <child
+      link="Arm_2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-150"
+      upper="150"
+      effort="0.4"
+      velocity="11.9" />
+  </joint>
+</robot>

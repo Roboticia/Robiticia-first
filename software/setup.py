@@ -7,19 +7,19 @@ from setuptools import setup, find_packages
 
 
 def version():
-    with open('poppy_ergo_starter/_version.py') as f:
+    with open('roboticia_first/_version.py') as f:
         return re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", f.read()).group(1)
 
 extra = {}
 if sys.version_info >= (3,):
     extra['use_2to3'] = True
 
-setup(name='poppy-ergo-starter',
+setup(name='roboticia-first',
       version=version(),
       packages=find_packages(),
 
-      install_requires=['poppy-creature >= 1.6.0',
-                        'pypot >= 2.7.0'],
+      install_requires=['poppy-creature >= 1.8',
+                        'pypot >= 2.11'],
 
       setup_requires=['setuptools_git >= 0.3', ],
 
@@ -28,10 +28,10 @@ setup(name='poppy-ergo-starter',
 
       zip_safe=False,
 
-      author='Pierre Rouanet, Jonathan Grizou, Matthieu Lapeyre',
-      author_email='pierre.rouanet@gmail.com',
-      description=' Poppy 4 dof arm mini Software Library',
-      url='https://github.com/poppy-project/poppy-4dof-arm-mini',
+      author='Julien JEHL',
+      author_email='julien.jehl@roboticia.com',
+      description='Roboticia-first Software Library',
+      url='https://github.com/Roboticia/Roboticia-first',
       license='GNU GENERAL PUBLIC LICENSE Version 3',
 
       **extra

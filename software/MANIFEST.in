@@ -1,2 +1,2 @@
-include poppy_ergo_starter/configuration/*.json
-include poppy_ergo_starter/vrep-scene/*.ttt
+include roboticia_first/configuration/*.json
+include roboticia_first/vrep-scene/*.ttt
