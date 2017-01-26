@@ -1,19 +1,22 @@
 import ctypes
 
 from functools import partial
+from numpy import sum
 
 from poppy.creatures import AbstractPoppyCreature
+
+from .primitives.dance import Dance
 
 
 class RoboticiaFirst(AbstractPoppyCreature):
     @classmethod
     def setup(cls, robot):
+        robot._primitive_manager._filter = partial(sum, axis=0)
         for m in robot.motors:
             m.goto_behavior = 'dummy'
+            
+        robot.attach_primitive(Dance(robot), 'dance')
 
-        #robot.attach_primitive(Jump(robot), 'jump')
-        #print "robot is setup"
-		
         if robot.simulated:
             cls.vrep_hack(robot)
             cls.add_vrep_methods(robot)
@@ -22,11 +25,11 @@ class RoboticiaFirst(AbstractPoppyCreature):
     @classmethod
     def vrep_hack(cls, robot):
         # fix vrep orientation bug
-        wrong_motor = []
+        wrong_motor = [robot.m3]
         
         for m in wrong_motor:
             m.direct = not m.direct
-            m.offset = -m.offset
+            #m.offset = -m.offset
             
     @classmethod
     def add_vrep_methods(cls, robot):
