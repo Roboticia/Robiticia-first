@@ -14,18 +14,19 @@ class RoboticiaFirst(AbstractPoppyCreature):
         robot._primitive_manager._filter = partial(sum, axis=0)
         for m in robot.motors:
             m.goto_behavior = 'dummy'
-            
+            m.moving_speed = 0
+
         robot.attach_primitive(Dance(robot), 'dance')
 
         if robot.simulated:
             cls.vrep_hack(robot)
             cls.add_vrep_methods(robot)
-		
-		
+
+
     @classmethod
     def vrep_hack(cls, robot):
         # fix vrep orientation bug
-        wrong_motor = [robot.m3]
+        wrong_motor = [robot.m3, robot.m2]
         
         for m in wrong_motor:
             m.direct = not m.direct
