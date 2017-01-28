@@ -1,3 +1,4 @@
+import time
 from pypot.primitive import LoopPrimitive
 from pypot.primitive.utils import Sinus
 
@@ -36,9 +37,9 @@ class Dance(LoopPrimitive):
 
     def teardown(self):
         [s.stop() for s in self.sinus]
-        
+        time.sleep(2)
         for m in self.robot.motors:
-            m.moving_speed = 0
+            m.moving_speed = 0.
 
         for m in self.robot.motors:
             m.led = 'off'

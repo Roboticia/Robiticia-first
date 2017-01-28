@@ -32,6 +32,10 @@ class RoboticiaFirst(AbstractPoppyCreature):
             m.direct = not m.direct
             #m.offset = -m.offset
             
+        # use minjerk to simulate speed in vrep
+        for m in robot.motors:
+            m.goto_behavior = 'minjerk'
+            
     @classmethod
     def add_vrep_methods(cls, robot):
         from pypot.vrep.controller import VrepController
