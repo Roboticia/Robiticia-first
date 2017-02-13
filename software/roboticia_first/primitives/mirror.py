@@ -1,3 +1,7 @@
+import requests
+from pypot.primitive import LoopPrimitive
+
+
 class Mirror(LoopPrimitive):
     def __init__(self, robot, refresh_freq):
         self.robot = robot
