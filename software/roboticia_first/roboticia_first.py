@@ -3,9 +3,10 @@ import ctypes
 from functools import partial
 from numpy import sum
 
-from poppy.creatures import AbstractPoppyCreature
+from pypot.creatures import AbstractPoppyCreature
 
 from .primitives.dance import Dance
+from .primitives.mirror import Mirror
 
 
 class RoboticiaFirst(AbstractPoppyCreature):
@@ -17,7 +18,7 @@ class RoboticiaFirst(AbstractPoppyCreature):
             m.moving_speed = 0
 
         robot.attach_primitive(Dance(robot), 'dance')
-        
+        robot.attach_primitive(Mirror(robot,50), 'mirror')
 
         if robot.simulated:
             cls.vrep_hack(robot)

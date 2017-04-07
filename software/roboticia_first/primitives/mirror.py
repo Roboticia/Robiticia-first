@@ -17,7 +17,7 @@ class Mirror(LoopPrimitive):
     def update(self):
         for m in self.robot.motors:
             try :
-                r = requests.get('http://roboticia-first-02.local:8080/motor/'+m.name+'/register/present_position')
+                r = requests.get('http://roboticia-first-01.local:8080/motor/'+m.name+'/register/present_position')
             except :
                 pass
             else :
