@@ -18,8 +18,7 @@ setup(name='roboticia-first',
       version=version(),
       packages=find_packages(),
 
-      install_requires=['poppy-creature >= 1.8',
-                        'pypot >= 2.11'],
+      install_requires=['pypot >= 3.0', 'hampy'],
 
       setup_requires=['setuptools_git >= 0.3', ],
 
