@@ -1,8 +1,8 @@
-# Roboticia first
+# Roboticia-first
 A very simple and low cost robot with 3 degrees of freedom.  It can be easily 3D printed and laser cutted. It works with Dynamixel XL-320 motors, and a Raspberry Pi for control.
 
 
-![Roboticia-first](doc/Roboticia-first.jpg)
+![Roboticia-first](roboticia-first.jpg)
 
 The Roboticia-first is ideal to start manipulating robots and learn robotic without difficulties.
 
