@@ -7,6 +7,7 @@ from pypot.creatures import AbstractPoppyCreature
 
 from .primitives.dance import Dance
 from .primitives.mirror import Mirror
+from .primitives.rest_pos import Pos
 
 
 class RoboticiaFirst(AbstractPoppyCreature):
@@ -19,6 +20,7 @@ class RoboticiaFirst(AbstractPoppyCreature):
 
         robot.attach_primitive(Dance(robot), 'dance')
         robot.attach_primitive(Mirror(robot,50), 'mirror')
+        robot.attach_primitive(Pos(robot), 'pos')
 
         if robot.simulated:
             cls.vrep_hack(robot)
