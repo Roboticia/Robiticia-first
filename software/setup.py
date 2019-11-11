@@ -18,7 +18,7 @@ setup(name='roboticia-first',
       version=version(),
       packages=find_packages(),
 
-      install_requires=['pypot >= 3.0', 'hampy'],
+      install_requires=['pypoticia >= 3.0', 'hampy'],
 
       setup_requires=['setuptools_git >= 0.3', ],
 
